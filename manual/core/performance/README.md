@@ -12,8 +12,8 @@ one -- even `session.execute(String)` creates a `SimpleStatement` under the hood
 
 #### Immutability and builders
 
-Statements are immutable: every call to a setter method creates an intermediary copy. If you have
-multiple attributes to set, use a builder instead:
+Statements are by default implemented with immutable classes: every call to a setter method creates
+an intermediary copy. If you have multiple attributes to set, use a builder instead:
 
 ```java
 SimpleStatement statement = SimpleStatement.builder("SELECT * FROM foo")
@@ -23,7 +23,8 @@ SimpleStatement statement = SimpleStatement.builder("SELECT * FROM foo")
     .build();
 ```
 
-Simple statements are also completely stateless, so you can store them as constants.
+Also, note that you don't need a driver `Session` to create simple statements: they can be
+initialized statically and stored as constants.
 
 #### Prepared statements
 
