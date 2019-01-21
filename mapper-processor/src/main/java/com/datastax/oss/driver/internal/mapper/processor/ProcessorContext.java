@@ -25,7 +25,7 @@ import javax.lang.model.util.Types;
  * A custom context to share processor-level information with code generators. Basically just a way
  * to avoid passing a gazillion parameters everywhere.
  */
-public class GenerationContext {
+public class ProcessorContext {
 
   private final DecoratedMessager messager;
   private final Types typeUtils;
@@ -33,7 +33,7 @@ public class GenerationContext {
   private final Filer filer;
   private final String indent;
 
-  public GenerationContext(
+  public ProcessorContext(
       DecoratedMessager messager,
       Types typeUtils,
       Elements elementUtils,

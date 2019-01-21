@@ -23,9 +23,9 @@ import javax.lang.model.element.TypeElement;
 public class MapperGenerator {
 
   private final TypeElement interfaceElement;
-  private final GenerationContext context;
+  private final ProcessorContext context;
 
-  public MapperGenerator(TypeElement interfaceElement, GenerationContext context) {
+  public MapperGenerator(TypeElement interfaceElement, ProcessorContext context) {
     this.interfaceElement = interfaceElement;
     this.context = context;
   }

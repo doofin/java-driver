@@ -35,7 +35,7 @@ public class MapperBuilderGenerator extends FileGenerator {
       ClassName builderName,
       TypeElement interfaceElement,
       ClassName implementationName,
-      GenerationContext context) {
+      ProcessorContext context) {
     super(context);
     this.builderName = builderName;
     this.interfaceElement = interfaceElement;

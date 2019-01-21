@@ -48,7 +48,7 @@ public class DaoFactoryMethodGenerator implements PartialClassGenerator {
    * returns null.
    */
   public static DaoFactoryMethodGenerator newInstance(
-      ExecutableElement methodElement, GenerationContext context) {
+      ExecutableElement methodElement, ProcessorContext context) {
     TypeMirror returnType = methodElement.getReturnType();
     if (returnType.getKind() != TypeKind.DECLARED) {
       return null;
@@ -84,7 +84,7 @@ public class DaoFactoryMethodGenerator implements PartialClassGenerator {
     }
   }
 
-  private static boolean isFuture(Element element, GenerationContext context) {
+  private static boolean isFuture(Element element, ProcessorContext context) {
     return context.isSame(element, CompletionStage.class)
         || context.isSame(element, CompletableFuture.class);
   }
@@ -101,7 +101,7 @@ public class DaoFactoryMethodGenerator implements PartialClassGenerator {
       ExecutableElement methodElement,
       ClassName daoImplementationName,
       boolean isAsync,
-      GenerationContext context) {
+      ProcessorContext context) {
     this.methodElement = methodElement;
     this.daoImplementationName = daoImplementationName;
     this.isAsync = isAsync;
@@ -136,7 +136,7 @@ public class DaoFactoryMethodGenerator implements PartialClassGenerator {
       VariableElement candidate,
       VariableElement previous,
       Class<?> annotation,
-      GenerationContext context) {
+      ProcessorContext context) {
     if (previous != null) {
       context
           .getMessager()

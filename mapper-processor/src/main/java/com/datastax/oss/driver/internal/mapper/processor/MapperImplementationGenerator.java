@@ -38,7 +38,7 @@ public class MapperImplementationGenerator extends FileGenerator {
   private final ClassName className;
 
   public MapperImplementationGenerator(
-      TypeElement interfaceElement, ClassName builderName, GenerationContext context) {
+      TypeElement interfaceElement, ClassName builderName, ProcessorContext context) {
     super(context);
     this.interfaceElement = interfaceElement;
     className = GeneratedNames.mapperImplementation(interfaceElement);

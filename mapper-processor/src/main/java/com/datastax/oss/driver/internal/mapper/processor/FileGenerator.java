@@ -34,9 +34,9 @@ public abstract class FileGenerator {
 
   public static final String JAVADOC_PARAGRAPH_SEPARATOR = "\n\n<p>";
 
-  protected final GenerationContext context;
+  protected final ProcessorContext context;
 
-  protected FileGenerator(GenerationContext context) {
+  protected FileGenerator(ProcessorContext context) {
     this.context = context;
   }
 

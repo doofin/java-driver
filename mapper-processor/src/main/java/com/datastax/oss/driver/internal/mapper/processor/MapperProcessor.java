@@ -65,8 +65,8 @@ public class MapperProcessor extends AbstractProcessor {
   @Override
   public boolean process(
       Set<? extends TypeElement> annotations, RoundEnvironment roundEnvironment) {
-    GenerationContext context =
-        new GenerationContext(messager, typeUtils, elementUtils, filer, indent);
+    ProcessorContext context =
+        new ProcessorContext(messager, typeUtils, elementUtils, filer, indent);
 
     processAnnotatedInterfaces(
         roundEnvironment, Dao.class, e -> new DaoImplementationGenerator(e, context).generate());

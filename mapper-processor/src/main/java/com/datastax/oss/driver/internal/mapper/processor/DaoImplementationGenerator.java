@@ -36,7 +36,7 @@ public class DaoImplementationGenerator extends FileGenerator {
   private final TypeElement interfaceElement;
   private final ClassName implementationName;
 
-  public DaoImplementationGenerator(TypeElement interfaceElement, GenerationContext context) {
+  public DaoImplementationGenerator(TypeElement interfaceElement, ProcessorContext context) {
     super(context);
     this.interfaceElement = interfaceElement;
     implementationName = GeneratedNames.daoImplementation(interfaceElement);
